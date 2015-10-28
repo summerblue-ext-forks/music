@@ -1483,6 +1483,11 @@ $(function() {
             return;
         }
     }
+    function composeMp3DownloadLink (music) {
+        console.log(music);
+        $('#current-music-donwload-btn').attr('href', music.music);
+    }
+
     $('#form-tabs li').on('click', function() {
         var holder = {
             'name':'例如: 不要说话 陈奕迅',
@@ -1561,6 +1566,9 @@ $(function() {
                             html += '</div>';
                             $('#music-show').html(html);
                             $('#player').amazingaudioplayer();
+
+                            composeMp3DownloadLink(result.data[0]);
+
                             $('.amazingaudioplayer-prev, .amazingaudioplayer-next, .amazingaudioplayer-track-item').on('click', function(){
                                 var index = $('.amazingaudioplayer-track-item-active').index();
                                 var mmusic = $('.amazingaudioplayer-audios a').eq(index).data('src');
@@ -1569,6 +1577,8 @@ $(function() {
                                 $('#music-src').val(mmusic);
                                 $('#music-name').val(mname);
                                 $('#music-author').val(mauthor);
+
+                                composeMp3DownloadLink(result.data[index]);
                             });
                         } else {
                             $('#music_input').closest('.am-form-group').find('.am-alert').html(result.msg).show();

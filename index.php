@@ -76,15 +76,13 @@ if (ajax_post('music_input') && ajax_post('music_filter')) {
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>音乐搜索器|音乐在线试听 - by 麦田一根葱</title>
+    <title>音乐搜索器</title>
     <meta name="renderer" content="webkit">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta http-equiv="Cache-Control" content="no-transform">
     <meta http-equiv="Cache-Control" content="no-siteapp">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <meta name="author" content="Maicong.me">
-    <meta name="keywords" content="音乐,音乐搜索,音乐试听,音乐在线听">
-    <meta name="description" content="麦葱(麦田一根葱)特制音乐搜索解决方案，可搜索试听网易云音乐、一听音乐、百度音乐、酷狗音乐、酷我音乐、QQ音乐、虾米音乐、5sing原创音乐、天天动听、咪咕音乐、SoundCloud。">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="apple-mobile-web-app-title" content="音乐搜索器">
@@ -100,26 +98,15 @@ if (ajax_post('music_input') && ajax_post('music_filter')) {
     <header class="am-topbar am-topbar-fixed-top">
         <div class="am-container">
             <h1 class="am-topbar-brand">
-                <a href="/">2333 实验室</a>
+                <a href="/">超能实验室</a>
             </h1>
-            <button class="am-topbar-btn am-topbar-toggle am-btn am-btn-sm am-btn-secondary am-show-sm-only" data-am-collapse="{target: '#collapse-head'}">
-                <span class="am-sr-only">导航切换</span>
-                <span class="am-icon-bars"></span>
-            </button>
-            <nav class="am-collapse am-topbar-collapse am-fr" id="collapse-head">
-                <ul class="am-nav am-nav-pills am-topbar-nav">
-                    <li><a href="http://img.2333.me">图片反盗链</a></li>
-                    <li><a href="http://crx.2333.me">CRX下载</a></li>
-                    <li class="am-active"><a href="http://music.2333.me">音乐搜索器</a></li>
-                </ul>
-            </nav>
         </div>
     </header>
     <section class="am-g about">
         <div class="am-container am-margin-vertical-xl">
             <header class="am-padding-vertical">
                 <h2 class="about-title about-color">音乐搜索器</h2>
-                <p class="am-text-center">麦葱特制网易一听百度酷狗酷我QQ虾米5sing天天动听咪咕SoundCloud音乐搜索解决方案</p>
+                <p class="am-text-center">特制网易一听百度酷狗酷我QQ虾米5sing天天动听咪咕SoundCloud音乐搜索解决方案</p>
             </header>
             <hr>
             <div class="am-u-lg-12 am-padding-vertical">
@@ -174,6 +161,9 @@ if (ajax_post('music_input') && ajax_post('music_filter')) {
                 </form>
                 <form class="am-form am-u-md-12 am-u-sm-centered music-main">
                     <a type="button" id="getit" class="am-btn am-btn-success am-btn-lg am-btn-block am-radius am-margin-bottom-lg">成功 Get &#x221A; 返回继续 <i class="am-icon-reply am-icon-fw"></i></a>
+
+                    <a id="current-music-donwload-btn" class="am-btn am-btn-primary am-btn-lg am-radius am-btn-block" download href="#">下载 MP3 文件</a>
+<br>
                     <div class="am-input-group am-input-group-sm am-margin-bottom-sm" data-am-popover="{content: '音乐链接', trigger: 'hover'}">
                         <span class="am-input-group-label"><i class="am-icon-music am-icon-fw"></i></span>
                         <input type="text" id="music-src" class="am-form-field">
@@ -194,7 +184,7 @@ if (ajax_post('music_input') && ajax_post('music_filter')) {
                     </div>
                     <div id="music-show" class="am-margin-vertical"></div>
                 </form>
-                <div class="am-u-md-12 am-u-sm-centered am-margin-vertical music-tips">
+                <div class="am-u-md-12 am-u-sm-centered am-margin-vertical music-tips" style="display:none">
                     <h4>帮助：</h4>
                     <p><b>标红</b> 为 <strong>音乐ID</strong>，<u>下划线</u> 表示 <strong>音乐地址</strong></p>
                     <p><span>网易：</span><u>http://music.163.com/#/song?id=<b>25906124</b></u></p>
@@ -213,40 +203,10 @@ if (ajax_post('music_input') && ajax_post('music_filter')) {
                 </div>
             </div>
         </div>
-        <div class="am-popup" id="update-info">
-          <div class="am-popup-inner">
-            <div class="am-popup-hd">
-              <h4 class="am-popup-title">更新日志</h4>
-              <span data-am-modal-close
-                    class="am-close">&times;</span>
-            </div>
-            <div class="am-popup-bd">
-                <ul>
-                    <li>2015.06.15 <code>v1.0.4</code> 增加对 SoundCloud 的支持，增加代理支持，修复音乐名称识别问题，优化代码</li>
-                    <li>2015.06.13 <code>v1.0.3</code> 增加对 天天动听、咪咕 的支持</li>
-                    <li>2015.06.12 <code>v1.0.2</code> 增加对 5sing 的支持</li>
-                    <li>2015.06.12 <code>v1.0.1</code> 代码优化 + BUG修复</li>
-                    <li>2015.06.10 <code>v1.0.0</code> 音乐搜索器上线</li>
-                </ul>
-            </div>
-          </div>
-        </div>
-        <div class="am-popup" id="copr-info">
-          <div class="am-popup-inner">
-            <div class="am-popup-hd">
-              <h4 class="am-popup-title">版权声明</h4>
-              <span data-am-modal-close
-                    class="am-close">&times;</span>
-            </div>
-            <div class="am-popup-bd">
-                <p>本站音频文件来自各网站接口，本站不会修改任何音频文件</p>
-                <p>音频版权来自各网站，本站只提供数据查询服务，不提供任何音频存储和贩卖服务</p>
-            </div>
-          </div>
-        </div>
+        
     </section>
     <footer class="footer am-topbar-fixed-bottom">
-        <p class="am-text-sm">如果获取失败，请 <a href="http://www.yuxiaoxi.com/guestbook#respond" target="_blank" rel="author">@麦葱</a> © 2013-2015 <a href="javascript:;" data-am-modal="{target: '#update-info'}">更新日志</a> <a href="javascript:;" data-am-modal="{target: '#copr-info'}">版权声明</a> <a href="https://github.com/maicong/music" target="_blank">开源共享</a></p>
+        <p>Made With <i class="am-icon-heartbeat" style="color:#F74343;font-size:1.5em;"></i> By The EST Group. </p>
     </footer>
     <script src="http://libs.baidu.com/jquery/1.11.1/jquery.min.js"></script>
     <script src="http://cdn.amazeui.org/amazeui/2.3.0/js/amazeui.min.js"></script>
