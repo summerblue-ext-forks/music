@@ -91,7 +91,7 @@ if (ajax_post('music_input') && ajax_post('music_filter')) {
     <link rel="shortcut icon" href="static/favicon.ico">
     <link rel="apple-touch-icon" href="static/apple-touch-icon.png">
     <link rel="canonical" href="http://music.2333.me/">
-    <link rel="stylesheet" href="http://cdn.amazeui.org/amazeui/2.3.0/css/amazeui.min.css">
+    <link rel="stylesheet" href="static/amazeui.min.css">
     <link rel="stylesheet" href="static/style.css">
 </head>
 <body>
@@ -208,8 +208,8 @@ if (ajax_post('music_input') && ajax_post('music_filter')) {
     <footer class="footer am-topbar-fixed-bottom">
         <p>Made With <i class="am-icon-heartbeat" style="color:#F74343;font-size:1.5em;"></i> By The EST Group. </p>
     </footer>
-    <script src="http://libs.baidu.com/jquery/1.11.1/jquery.min.js"></script>
-    <script src="http://cdn.amazeui.org/amazeui/2.3.0/js/amazeui.min.js"></script>
-    <script src="static/music.js"></script>
+    <script src="/static/jquery.min.js"></script>
+    <script src="/static/amazeui.min.js"></script>
+    <script src="/static/music.js"></script>
 </body>
 </html>
